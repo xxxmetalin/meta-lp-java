@@ -32,8 +32,8 @@ body {
 }
 
 .link-hover {
-  transition: 0.3s;
+  transition: opacity 0.3s;
   &:hover {
-    color: var(--main);
+    opacity: 0.5;
   }
 }

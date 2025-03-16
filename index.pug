@@ -85,21 +85,24 @@ html(lang="ja")
                 a.l-footer__nav-link(href=item.link)
                   span.l-footer__nav-icon
                     +img('footer-icon.svg')
-                  |!{item.text}
+                  span.l-footer__nav-text
+                    |!{item.text}
           ul.l-footer__nav-list
             each item in footer.mid
               li.l-footer__nav-item
                 a.l-footer__nav-link(href=item.link)
                   span.l-footer__nav-icon
                     +img('footer-icon.svg')
-                  |!{item.text}
+                  span.l-footer__nav-text
+                    |!{item.text}
           ul.l-footer__nav-list
             each item in footer.right
               li.l-footer__nav-item
                 a.l-footer__nav-link(href=item.link)
                   span.l-footer__nav-icon
                     +img('footer-icon.svg')
-                  |!{item.text}
+                  span.l-footer__nav-text
+                    |!{item.text}
       .l-footer__copy
         small
           |Copyright©2024 株式会社SPS All rights reserved.
