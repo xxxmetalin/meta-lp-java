@@ -13,6 +13,7 @@ html(lang="ja")
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     link(rel="stylesheet", href="../assets/css/styles.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.0/swiper-bundle.css")
   body
     header.l-header
       h1
@@ -37,7 +38,7 @@ html(lang="ja")
         +flow()
 
         section.p-top__video
-          +heading('事業説明動画の注目シーン<span>5</span>選', 'video')
+          +heading('事業説明動画の注目シーン<span class="number">5</span>選', 'video')
 
           .p-top__video-inner
             .p-top__video-stack
@@ -54,9 +55,37 @@ html(lang="ja")
                       |このシーンから視聴する
                       span.icon
                         +img('video-link-icon.svg')
-
           .p-top__video-desc
             |ヒラックスのビジネスモデルをより理解した状態で、フランチャイズ加盟説明会に<br>参加していただきたいので<span>「事業説明動画」をしっかりとご覧ください。</span>
+
+        section.p-top__about.l-container__full
+          +heading('そもそも<span>デイサービスフランチャイズ</span>とは？', 'about')
+          .p-top__about-inner
+            p.p-top__about-desc
+              |デイサービス運営のノウハウを提供し、加盟店をサポートするビジネスモデルのことです。高齢化社会の進展に伴い、デイサービス需要が高まる中、FC方式での参入が大きく注目されています。
+            .p-top__about-img-wrap
+              .p-top__about-img
+                +img('about-img-01.jpg')
+              .p-top__about-img
+                +img('about-img-02.jpg')
+            .p-top__about-content
+              .p-top__about-content-inner
+                +heading('<span>伸び続ける</span>市場規模', 'about')
+                .p-top__about-content-fig
+                  +img('about-fig.jpg')
+                .p-top__about-content-desc
+                  |デイサービス市場は2025年には4兆円規模に達すると予測されています。<br>一方で、サービスを提供するデイサービス事業所数の伸びは需要増加に追いついておらず、今後さらなる拡大余地があるのが現状です。<br>さらに、さらに近々、介護保険法の改正により、1つの事業所で通所介護と訪問介護を組み合わせるなど、柔軟で多様なサービス展開が可能なる予定です。 この法改正はデイサービス事業者にとって追い風であり、業界の常識を変える大きなチャンスと言えるでしょう。<br>需要の拡大に加え、法改正による事業の幅の広がりを考えると、今がデイサービス参入の絶好のタイミングだと言えます。 地域に必要なサービスを総合的に提供しながら、安定した売上と利益の拡大を実現できる、またとないビジネスチャンスが到来しているのです。
+          .p-top__about-arrow
+            +img('arrow-bottom.svg')
+
+        section.p-top__chance.l-container__full
+          h2.p-top__chance-heading
+            +img('chance-heading.png')
+          .p-top__chance-slider.swiper.js-auto-slider
+            .swiper-wrapper
+              - for (var i = 0; i < 8; i++)
+                .p-top__chance-img.swiper-slide
+                  +img(`chance-0${i+1}.jpg`)
 
         //- ここから
         section.p-top__reason
@@ -70,7 +99,7 @@ html(lang="ja")
 
 
         section.p-top__reason-2.l-container__full
-          +heading('ヒラックス<span>2</span>つの理由', 'reason')
+          +heading('ヒラックス<span class="number">2</span>つの理由', 'reason')
           <div class="p-top__reason-2-inner">
             //-  この中をお願いします
           </div>
@@ -82,7 +111,7 @@ html(lang="ja")
 
 
         section.p-top__strength.l-container__full
-          +heading('ヒラックスフランチャイズ<span>5</span>つの強み', 'strength')
+          +heading('ヒラックスフランチャイズ<span class="number">5</span>つの強み', 'strength')
 
           <div class="p-top__strength-content">
             //-  この中をお願いします
@@ -123,3 +152,6 @@ html(lang="ja")
       .l-footer__copy
         small
           |Copyright©2024 株式会社SPS All rights reserved.
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.0/swiper-bundle.min.js")
+    script(src="../assets/js/main.js")
