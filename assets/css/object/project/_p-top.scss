@@ -1,0 +1,43 @@
+@use "../../foundation/_mixin.scss" as bp;
+
+.p-top {
+
+}
+
+.p-top__lead {
+  position: relative;
+  padding-block: 40px 24px;
+  &::before, &::after {
+    content: "";
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+  &::before {
+    background: var(--blue);
+    left: 0;
+    clip-path: polygon(0 0, 100% 70%, 100% 100%, 0% 100%);
+  }
+  &::after {
+    background: var(--orange);
+    left: 0;
+    clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -2;
+  }
+  &-heading {
+    max-width: 560px;
+    margin-inline: auto;
+  }
+  &-video {
+    max-width: 720px;
+    margin-inline: auto;
+    aspect-ratio: 16 / 9;
+    margin-top: 58px;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+include mixin
+include data
+include video
+
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    link(rel="stylesheet", href="../assets/css/styles.css")
+  body
+    header.l-header
+      h1
+        +pic('FV.jpg', 'FV-sp.jpg', '画期的な事業モデルが支持されています')
+    main.l-main
+      .l-container
+        section.p-top__lead.l-container__full
+          h2.p-top__lead-heading
+            +pic('lead-heading.jpg', 'lead-heading-sp.jpg', '')
+          .p-top__lead-video
+            +video()
+
+
+    footer.l-footer
+      .l-footer__inner
+        .l-footer__logo
+          +img('logo.svg', 'logo-sp.svg', '')
+        nav.l-footer__nav
+          ul.l-footer__nav-list
+            each item in footer.left
+              li.l-footer__nav-item
+                a.l-footer__nav-link(href=item.link)
+                  span.l-footer__nav-icon
+                    +img('footer-icon.svg')
+                  |!{item.text}
+          ul.l-footer__nav-list
+            each item in footer.mid
+              li.l-footer__nav-item
+                a.l-footer__nav-link(href=item.link)
+                  span.l-footer__nav-icon
+                    +img('footer-icon.svg')
+                  |!{item.text}
+          ul.l-footer__nav-list
+            each item in footer.right
+              li.l-footer__nav-item
+                a.l-footer__nav-link(href=item.link)
+                  span.l-footer__nav-icon
+                    +img('footer-icon.svg')
+                  |!{item.text}
+      .l-footer__copy
+        small
+          |Copyright©2024 株式会社SPS All rights reserved.
