@@ -38,6 +38,23 @@ html(lang="ja")
 
         section.p-top__video
           +heading('事業説明動画の注目シーン<span>5</span>選', 'video')
+
+          .p-top__video-inner
+            .p-top__video-stack
+              each val,i in data.video
+                .p-top__video-card
+                  .p-top__video-img
+                    +img(`video-0${i+1}.jpg`)
+                  .p-top__video-text
+                    .p-top__video-text-heading
+                      |TOPIC<span>0#{i+1}</span>
+                    .p-top__video-text-desc
+                      |!{val.text}
+                    a(href=val.link).p-top__video-link.link-hover
+                      |このシーンから視聴する
+                      span.icon
+                        +img('video-link-icon.svg')
+
           .p-top__video-desc
             |ヒラックスのビジネスモデルをより理解した状態で、フランチャイズ加盟説明会に<br>参加していただきたいので<span>「事業説明動画」をしっかりとご覧ください。</span>
 
