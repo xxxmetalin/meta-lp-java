@@ -1,6 +1,7 @@
 include mixin
 include data
 include video
+include flow
 
 doctype html
 html(lang="ja")
@@ -24,6 +25,21 @@ html(lang="ja")
           .p-top__lead-video
             +video()
 
+        section.p-top__cta.l-container__full
+          h2.p-top__cta-heading
+            |ヒラックス加盟説明会への<br>お申し込みはこちら
+          .c-btn-center
+            a(href="").c-btn__cta
+              |説明会に参加する
+              span.icon
+                +img('btn-cta-icon.svg')
+
+        +flow()
+
+        section.p-top__video
+          +heading('事業説明動画の注目シーン<span>5</span>選', 'video')
+          .p-top__video-desc
+            |ヒラックスのビジネスモデルをより理解した状態で、フランチャイズ加盟説明会に<br>参加していただきたいので<span>「事業説明動画」をしっかりとご覧ください。</span>
 
     footer.l-footer
       .l-footer__inner

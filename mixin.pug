@@ -5,3 +5,10 @@ mixin pic(pc, sp, alt)
   picture
     source(srcset=`/assets/images/${sp}` media='(max-width: 599px)')
     img(src=`/assets/images/${pc}`, alt=alt)
+
+mixin heading(text, sub)
+  .c-heading
+    span.c-heading__sub
+      |!{sub}
+    h2.c-heading__main
+      |!{text}

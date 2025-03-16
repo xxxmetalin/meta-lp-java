@@ -18,7 +18,7 @@
   --orange: #F87423;
   --blue: #0C3073;
   --yellow: #FEC12F;
-  --red: #F84519;
+  --dark-orange: #F84519;
   --gray: #D9D9D9;
   --skin: #FFF2E3;
 }
@@ -28,7 +28,7 @@ body {
   box-sizing: border-box;
   color: var(--text);
   font-size: 16px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .link-hover {

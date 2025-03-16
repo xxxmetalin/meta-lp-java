@@ -1,35 +1,17 @@
 @use "../../foundation/_mixin.scss" as bp;
 
-.c-heading-box {
-  font-weight: bold;
-  font-size: 2rem;
-  padding-block: 14px;
-  width: 180px;
-  border: 1px solid var(--main);
+.c-heading {
   text-align: center;
-  @include bp.breakpoint('sp') {
-    font-size: 1.6rem;
-    width: 150px;
+  &__sub {
+    text-transform: uppercase;
+    color: var(--orange);
   }
-}
-
-.c-heading-line {
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding-top: 35px;
-  position: relative;
-  line-height: 1.7;
-  @include bp.breakpoint('sp') {
-    font-size: 1.8rem;
-  }
-  &::before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 1px;
-    background: var(--main);
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__main {
+    font-size: 24px;
+    font-weight: 700;
+    span {
+      font-size: 32px;
+      color: var(--orange);
+    }
   }
 }
