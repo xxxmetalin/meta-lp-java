@@ -1,7 +1,7 @@
 mixin flow()
-  section.p-top__flow.l-container__full
+  section.p-top__flow.l-container__full&attributes(attributes)
     .l-container
-      +heading('ヒラックス加盟説明会参加までの<span>3</span>ステップ', 'flow')
+      +heading('ヒラックス加盟説明会参加までの<br class="for-mobile"><span class="number">3</span>ステップ', 'flow')
       .p-top__flow-content
         each val,i in data.flow
           .p-top__flow-card

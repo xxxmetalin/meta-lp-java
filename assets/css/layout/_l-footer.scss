@@ -4,6 +4,9 @@
   &__inner {
     background: var(--blue);
     padding-block: 80px;
+    @include bp.breakpoint('tablet') {
+      padding-top: 40px;
+    }
   }
   &__logo {
     width: 192px;
@@ -16,10 +19,17 @@
     margin-inline: auto;
     display: flex;
     justify-content: space-between;
+    @include bp.breakpoint('tablet') {
+      flex-direction: column;
+      padding-inline: 21px;
+    }
   }
   &__nav-list {
     > * + * {
       margin-top: 24px;
+      @include bp.breakpoint('tablet') {
+        margin-top: 0;
+      }
     }
   }
   &__nav-link {
@@ -29,6 +39,9 @@
     color: #fff;
     font-weight: 500;
     letter-spacing: 0.05em;
+    @include bp.breakpoint('tablet') {
+      margin-top: 8px;
+    }
     &:hover {
       .l-footer__nav-text {
         opacity: 0.5;

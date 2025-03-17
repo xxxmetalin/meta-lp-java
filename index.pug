@@ -13,7 +13,7 @@ html(lang="ja")
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     link(rel="stylesheet", href="../assets/css/styles.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.0/swiper-bundle.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.css")
   body
     header.l-header
       h1
@@ -22,22 +22,25 @@ html(lang="ja")
       .l-container
         section.p-top__lead.l-container__full
           h2.p-top__lead-heading
-            +pic('lead-heading.jpg', 'lead-heading-sp.jpg', '')
+            +pic('lead-heading.jpg', 'lead-heading-sp.png', '')
           .p-top__lead-video
-            +video()
+            #player
+            //- +video()
 
         section.p-top__cta.l-container__full
           h2.p-top__cta-heading
             |ヒラックス加盟説明会への<br>お申し込みはこちら
           .c-btn-center
-            a(href="").c-btn__cta
+            a(href="").c-btn__cta.for-large
               |説明会に参加する
               span.icon
                 +img('btn-cta-icon.svg')
+            a(href="").c-btn_cta.for-mobile
+              +img('cta-btn-sp.png')
 
         +flow()
 
-        section.p-top__video
+        section.p-top__video#video
           +heading('事業説明動画の注目シーン<span class="number">5</span>選', 'video')
 
           .p-top__video-inner
@@ -51,15 +54,15 @@ html(lang="ja")
                       |TOPIC<span>0#{i+1}</span>
                     .p-top__video-text-desc
                       |!{val.text}
-                    a(href=val.link).p-top__video-link.link-hover
+                    a(href=val.link data-video-time=val.time).p-top__video-link.link-hover.js-video-play
                       |このシーンから視聴する
                       span.icon
                         +img('video-link-icon.svg')
           .p-top__video-desc
-            |ヒラックスのビジネスモデルをより理解した状態で、フランチャイズ加盟説明会に<br>参加していただきたいので<span>「事業説明動画」をしっかりとご覧ください。</span>
+            |ヒラックスのビジネスモデルをより理解した状態で、フランチャイズ加盟説明会に<br class="for-large">参加していただきたいので<span>「事業説明動画」をしっかりとご覧ください。</span>
 
-        section.p-top__about.l-container__full
-          +heading('そもそも<span>デイサービスフランチャイズ</span>とは？', 'about')
+        section.p-top__about.l-container__full#about
+          +heading('そもそも<span>デイサービス<br class="for-mobile">フランチャイズ</span>とは？', 'about')
           .p-top__about-inner
             p.p-top__about-desc
               |デイサービス運営のノウハウを提供し、加盟店をサポートするビジネスモデルのことです。高齢化社会の進展に伴い、デイサービス需要が高まる中、FC方式での参入が大きく注目されています。
@@ -88,8 +91,8 @@ html(lang="ja")
                   +img(`chance-0${i+1}.jpg`)
 
         //- ここから
-        section.p-top__reason
-          +heading('ヒラックスのフランチャイズが<span>手堅い理由</span>', 'reason')
+        section.p-top__reason#reason
+          +heading('ヒラックスのフランチャイズが<br class="for-mobile"><span>手堅い理由</span>', 'reason')
 
           <p>デイサービスFCは、単独開業と比べて本部の支援を受けられるので開業・運営リスクが低い点が魅力です。ブランド力を活かしつつ地域に密着したサービスを提供でき、利用者・家族から高い評価を得ています。</p>
 
@@ -98,7 +101,7 @@ html(lang="ja")
           </div>
 
 
-        section.p-top__reason-2.l-container__full
+        section.p-top__reason-2.l-container__full#reason-2
           +heading('ヒラックス<span class="number">2</span>つの理由', 'reason')
           <div class="p-top__reason-2-inner">
             //-  この中をお願いします
@@ -110,7 +113,7 @@ html(lang="ja")
             </div>
 
 
-        section.p-top__strength.l-container__full
+        section.p-top__strength.l-container__full#strength
           +heading('ヒラックスフランチャイズ<span class="number">5</span>つの強み', 'strength')
 
           <div class="p-top__strength-content">
@@ -119,6 +122,69 @@ html(lang="ja")
 
         //- ここまで
 
+        section.p-top__point.l-container__full#point
+          +heading('デイサービスFC加盟説明会の<br class="for-mobile"><span>見どころ</span>', 'point')
+          .p-top__point-slider.swiper.js-point-slider
+            .swiper-wrapper
+              - for (var i = 0; i < 5; i++)
+                .p-top__point-img.swiper-slide
+                  +img(`point-0${i+1}.png`)
+            .swiper-button-prev.link-hover
+              +img('slider-prev.svg')
+            .swiper-button-next.link-hover
+              +img('slider-next.svg')
+          .swiper-pagination
+
+        section.p-top__message.l-container__full#message
+          +heading('代表 石田 雄嗣からの<br class="for-mobile">メッセージ', 'message')
+          .p-top__message-inner
+            .p-top__message-card
+              .p-top__message-text
+                .p-top__message-desc
+                  |!{data.message}
+                .p-top__message-name
+                  |代表取締役<span>石田 雄嗣</span>
+              .p-top__message-img
+                +img('message-pic.jpg')
+
+
+
+        +flow()#flow
+
+        section.p-top__faq#faq
+          +heading('よくある質問', 'faq')
+          .p-top__faq-content
+            each val in data.faq
+              details.p-top__faq-details
+                summary.p-top__faq-summary
+                  span.p-top__faq-summary-icon
+                    |Q
+                  |!{val.q}
+                  span.p-top__faq-arrow
+                .p-top__faq-answer
+                  span.p-top__faq-answer-icon
+                    |A
+                  |!{val.a}
+
+      .p-top__cta-bottom
+        .p-top__cta-bottom-body
+          h2.p-top__cta-heading
+            |ヒラックス加盟説明会への<br>お申し込みはこちら
+          .c-btn-center
+            a(href="").c-btn__cta
+              |説明会に参加する
+              span.icon
+                +img('btn-cta-icon.svg')
+        .p-top__cta-bottom-body.-line
+          h2.p-top__cta-heading
+            |LINE公式アカウント<br>お得な情報やお知らせをお届けします
+          .c-btn-center
+            a(href="").c-btn__cta
+              span.illust
+                +img('line-illust.svg')
+              |LINE登録する
+              span.icon
+                +img('btn-cta-icon-line.svg')
 
     footer.l-footer
       .l-footer__inner
@@ -153,5 +219,6 @@ html(lang="ja")
         small
           |Copyright©2024 株式会社SPS All rights reserved.
 
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.0/swiper-bundle.min.js")
+    script(src="https://www.youtube.com/iframe_api")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js")
     script(src="../assets/js/main.js")
