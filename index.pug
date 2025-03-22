@@ -92,7 +92,7 @@ html(lang="ja")
 
         //- ここから
         section.p-top__reason#reason
-          +heading('ヒラックスのフランチャイズが<br class="for-mobile"><span>手堅い理由</span>', 'reason')
+          +heading('ヒラックスのフランチャイズが<br class="for-mobile"><span>手堅い理由 あああ</span>', 'reason')
 
           <p>デイサービスFCは、単独開業と比べて本部の支援を受けられるので開業・運営リスクが低い点が魅力です。ブランド力を活かしつつ地域に密着したサービスを提供でき、利用者・家族から高い評価を得ています。</p>
 
@@ -107,15 +107,16 @@ html(lang="ja")
           .p-top__reason-inner
             .p-top__video-stack
               .p-top__video-card
-          	   .p-top__reason-content
-            	  	.p-top__reason-img-wrap
-              	  	 .p-top__reason-img
-                    	  +img('reason-img-01.jpg')
-            	  	.p-top__reason-circle-tag
-              		 |01
-          		    +subheading('<span>開業・運営リスクが低い</span>')
-            		   p.p-top__about-desc
-              		  |デイサービスFCは、単独開業と比べて本部の支援を受けられるので開業・運営リスクが低い点が魅力です。ブランド力を活かしつつ地域に密着したサービスを提供でき、実際の利用者・家族から高い評価を得ています。
+               .p-top__reason-content
+                .p-top__reason-img-wrap
+                 .p-top__reason-img
+                  +img('reason-img-01.jpg')
+                .p-top__reason-circle-tag
+                 |01
+                h3.p-top__reason-subheading
+                 |<span>開業・運営リスクが低い</span>
+                 p.p-top__about-desc
+                  |デイサービスFCは、単独開業と比べて本部の支援を受けられるので開業・運営リスクが低い点が魅力です。ブランド力を活かしつつ地域に密着したサービスを提供でき、実際の利用者・家族から高い評価を得ています。
 
         section.p-top__reason-2.l-container__full#reason-2
           +heading('ヒラックス<span class="number">2</span>つの理由', 'reason')
@@ -154,7 +155,8 @@ html(lang="ja")
                 .p-top__video-card
                   .p-top__strength-number-tag
                    |01
-                  +subheading('<span>独自のボディケアサービスで利用者満足度を向上</span>')
+                  h3.p-top__strength-subheading
+                   |<span>独自のボディケアサービスで利用者満足度を向上</span>
                   .p-top__video-img
                     +img(`strength-01.jpg`)
                   p.p-top__reason2.1-desc
